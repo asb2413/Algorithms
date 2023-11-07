@@ -253,7 +253,7 @@ public:
     void ASCII_method(string text)
     {
 
-        cout << "ASCII_method" << endl;
+        cout << " ASCII_method " << endl;
         int array[127] = {0};
         for (char c : text)
         {
