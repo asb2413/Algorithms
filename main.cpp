@@ -189,9 +189,11 @@ public:
         }
 
         if (this->entries[hash].getKey() == key)
-        {
+        {   
 
-            return this->entries[hash].getValue();
+            T array[2]={this->entries[hash].getKey(),this->entries[hash].getValue()};
+            
+            return array;
         }
         else
         {
@@ -228,7 +230,8 @@ public:
         }
     }
 
-    int size() { return entriesCount; }
+    int size() { return length; }
+    int get_Entries_Count(){return entriesCount;}
 
     void print()
     {
@@ -304,15 +307,37 @@ public:
 
         hash_table.print();
     }
+
+    void sort_hash(hash_table<string> freq ){
+
+        
+        auto array_2D = new int[freq.get_Entries_Count()][2];
+        for(int i = 0; i < freq.size(); i++){
+
+            if(freq.get(to_string(i)).empty()){
+
+                continue;
+
+            }
+
+        }
+
+    }
 };
+
+
 
 //---------------------------------------------------
 
 int main()
 {       
     string text = "hello world";
-     char_frequencies freq;
-     freq.ASCII_method(text);
-     freq.utf8_method(text);
+     //char_frequencies freq;
+     hash_table<string> freq;
+     freq.set("1","abdullah");
+     freq.set("2","samir");
+     cout << freq.get("1");
+     //freq.ASCII_method(text);
+     //freq.utf8_method(text);
     return 0;
 }
